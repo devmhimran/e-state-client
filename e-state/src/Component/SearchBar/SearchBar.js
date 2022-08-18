@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 
-const SearchBar = () => {
-    const [location, setLocation] = useState('');
-    const [date, setDate] = useState('');
-    const [price, setPrice] = useState('');
-    const [propertType, setPropertyType] = useState('');
-
-    console.log(location, date, price, propertType);
+const SearchBar = ({location, setLocation, date, setDate, price, setPrice, propertyType, setPropertyType}) => {
+  
 
     const handleSearch = (e) =>{
         e.preventDefault();
@@ -48,7 +43,7 @@ const SearchBar = () => {
                     <div className="stat-title mb-2">Property Type</div>
                     <select className="select w-full max-w-xs text-xl" name='propertyType'>
                         <option defaultValue={"Houses"}>Houses</option>
-                        <option>Houses</option>
+                        <option>Store</option>
                     </select>
                 </div>
 

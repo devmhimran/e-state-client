@@ -10,7 +10,7 @@ const Navbar = () => {
         <li><Link to='/'>Resources</Link></li>
     </>
     return (
-        <div className="navbar__main  border-b">
+        <div className="navbar__main  border-b py-2">
             <div className="container mx-auto">
                 <div className="navbar bg-base-100">
                     <div className="navbar-start">

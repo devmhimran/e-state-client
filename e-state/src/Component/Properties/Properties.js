@@ -1,12 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Properties = ({propertyData}) => {
-    const { name, location, price, bed, bathroom, space, tag, img } = propertyData;
+    const {id, name, location, price, bed, bathroom, space, tag, img } = propertyData;
+    const navigate = useNavigate();
+    const navigateId = (id) =>{
+        navigate(`/property/${id}`);
+    }
+    // console.log(typeof(price))
     return (
 
         <div className="card w-full bg-base-100 shadow-xl relative">
-            <div class="badge badge-primary absolute top-2.5 left-2.5">{tag}</div>
-            <figure><img className='w-full h-64 object-cover' src={img} alt={name} /></figure>
+            <div className="badge badge-primary absolute top-2.5 left-2.5">{tag}</div>
+            <figure className='cursor-pointer' onClick={()=> navigateId(id)}><img className='w-full h-64 object-cover' src={img} alt={name} /></figure>
             <div className="card-body">
                 <div className="price__main">
                     <h1 className='font-bold text-2xl'>${price} <span className='font-normal text-xs text-slate-400'>/month</span></h1>

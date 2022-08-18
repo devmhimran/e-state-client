@@ -4,6 +4,17 @@ import SearchBar from '../SearchBar/SearchBar';
 
 const Home = () => {
     const [property, setProperty] = useState([]);
+    const [location, setLocation] = useState('');
+    const [date, setDate] = useState('');
+    const [price, setPrice] = useState('');
+    const [propertyType, setPropertyType] = useState('');
+    const priceInt = parseInt(price);
+    const notFoundMessage = <>
+        <div>
+            <h2>Not Found</h2>
+        </div>
+    </>
+    console.log(typeof(priceInt));
     useEffect(()=>{
         fetch('https://raw.githubusercontent.com/devmhimran/dummy-api/main/E-State-Api/data.json')
         .then(res=> res.json())
@@ -25,12 +36,27 @@ const Home = () => {
                             </select>
                         </div>
                     </div>
-                    <SearchBar></SearchBar>
+                    <SearchBar 
+                    location={location}
+                    setLocation={setLocation}
+                    date={date}
+                    setDate={setDate}  
+                    price={price} 
+                    setPrice={setPrice}
+                    propertyType={propertyType}
+                    setPropertyType={setPropertyType}
+                    ></SearchBar>
 
                     <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 mt-10">
                     {
-                        property.map(propertyData => <Properties key={propertyData.id} propertyData={propertyData}></Properties>)
+                        property.filter((propertyData) => {
+                            // console.log(location, date, price, propertyType);
+                            return (propertyData.location.toLowerCase().match(location.toLowerCase()))  ? propertyData: notFoundMessage
+                        }).map(propertyData => <Properties key={propertyData.id} propertyData={propertyData}></Properties>)
+                        
+                        
                     }
+
                     </div>
                    
                     
