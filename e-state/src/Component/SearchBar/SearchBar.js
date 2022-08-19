@@ -32,10 +32,10 @@ const SearchBar = ({location, setLocation, date, setDate, price, setPrice, prope
                 <div className="stat">
                     <div className="stat-title mb-2">Price</div>
                     <select className="select w-full max-w-xs text-xl" name='price'>
-                        <option defaultValue={2500}>$500-$2500</option>
-                        <option>$2500-$3000</option>
-                        <option>$3500-$4000</option>
-                        <option>$4500-$5000</option>
+                        <option value="2500">$500-$2500</option>
+                        <option value="3000">$2500-$3000</option>
+                        <option value="4000">$3500-$4000</option>
+                        <option value="5000">$4500-$5000</option>
                     </select>
                 </div>
 

@@ -1,7 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+    const navigate = useNavigate();
+    const handleNavigate = ()=>{
+        navigate('/');
+        window.location.reload(false);
+    }
     const menu = <>
         <li><Link to='/'>Rent</Link></li>
         <li><Link to='/'>Buy</Link></li>
@@ -22,7 +27,8 @@ const Navbar = () => {
                                 {menu}
                             </ul>
                         </div>
-                        <Link className='lg:mr-8 p-3' to='/'>E State</Link>
+                        <button onClick={handleNavigate}>E State</button>
+                        {/* <Link className='lg:mr-8 p-3' to='/'>E State</Link> */}
                         <div className='hidden lg:block'>
                             <ul className="menu menu-horizontal p-0">
                                 {menu}
