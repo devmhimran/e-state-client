@@ -26,11 +26,11 @@ const Home = () => {
         <div className="home__main bg-violet-50 py-24">
             <div className="w-8/12 mx-auto">
                 <div className='container mx-auto'>
-                    <div className="heading__main flex justify-between">
+                    <div className="heading__main grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 ">
                         <div className="heading__title">
-                            <h1 className='text-4xl font-bold'>Search properties for rent</h1>
+                            <p className='lg:text-4xl font-bold md:text-3xl sm:text-xl'>Search properties for rent</p>
                         </div>
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-full max-w-xs lg:ml-auto">
                             <select className="select select-bordered">
                                 <option defaultValue={"Search With Search Bar"}>Search With Search Bar</option>
                                 <option>Search With Search Bar</option>

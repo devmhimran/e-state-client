@@ -10,7 +10,7 @@ const Properties = ({propertyData}) => {
     // console.log(typeof(price))
     return (
 
-        <div className="card w-full bg-base-100 shadow-xl relative">
+        <div className="card card-compact w-full bg-base-100 shadow-xl relative">
             <div className="badge badge-primary absolute top-2.5 left-2.5">{tag}</div>
             <figure className='cursor-pointer' onClick={()=> navigateId(id)}><img className='w-full h-64 object-cover' src={img} alt={name} /></figure>
             <div className="card-body">

@@ -21,17 +21,17 @@ const SearchBar = ({location, setLocation, date, setDate, price, setPrice, prope
             <div className="stats stats-vertical w-full mt-8 lg:stats-horizontal">
                 <div className="stat">
                     <div className="stat-title mb-2">Location</div>
-                    <input className='input input-ghost w-full max-w-xs text-xl font-semibold' type="text" placeholder='Enter Location' name='location'></input>
+                    <input className='input input-ghost w-full max-w-xs lg:text-xl md:text-lg sm:text-lg font-semibold' type="text" placeholder='Enter Location' name='location'></input>
                 </div>
 
                 <div className="stat">
                     <div className="stat-title mb-2">When</div>
-                    <input className='input input-ghost w-full max-w-xs text-xl font-semibold' type="date" name="date" placeholder='When'></input>
+                    <input className='input input-ghost w-full max-w-xs lg:text-xl md:text-lg sm:text-lg font-semibold' type="date" name="date" placeholder='When'></input>
                 </div>
 
                 <div className="stat">
                     <div className="stat-title mb-2">Price</div>
-                    <select className="select w-full max-w-xs text-xl" name='price'>
+                    <select className="select w-full max-w-xs lg:text-xl md:text-lg sm:text-lg" name='price'>
                         <option value="2500">$500-$2500</option>
                         <option value="3000">$2500-$3000</option>
                         <option value="4000">$3500-$4000</option>
@@ -41,7 +41,7 @@ const SearchBar = ({location, setLocation, date, setDate, price, setPrice, prope
 
                 <div className="stat">
                     <div className="stat-title mb-2">Property Type</div>
-                    <select className="select w-full max-w-xs text-xl" name='propertyType'>
+                    <select className="select w-full max-w-xs lg:text-xl md:text-lg sm:text-lg" name='propertyType'>
                         <option defaultValue={"Houses"}>Houses</option>
                         <option>Store</option>
                     </select>
