@@ -24,7 +24,7 @@ const Home = () => {
     console.log(location, price, date)
     return (
         <div className="home__main bg-violet-50 py-24">
-            <div className="w-8/12 mx-auto">
+            <div className="w-7/12 mx-auto">
                 <div className='container mx-auto'>
                     <div className="heading__main grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 ">
                         <div className="heading__title">
@@ -48,7 +48,7 @@ const Home = () => {
                         setPropertyType={setPropertyType}
                     ></SearchBar>
 
-                    <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 mt-10">
+                    <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-9 mt-10">
                         {
                             property.filter((propertyData) => {
                                 return propertyData.location === '' ? propertyData

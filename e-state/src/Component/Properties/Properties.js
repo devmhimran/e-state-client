@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { MdOutlineBed } from 'react-icons/md';
 
 const Properties = ({propertyData}) => {
     const {id, name, location, price, bed, bathroom, space, tag, img } = propertyData;
@@ -10,7 +11,7 @@ const Properties = ({propertyData}) => {
     // console.log(typeof(price))
     return (
 
-        <div className="card card-compact w-full bg-base-100 shadow-xl relative">
+        <div className="card card-compact w-full bg-base-100 shadow-md relative">
             <div className="badge badge-primary absolute top-2.5 left-2.5">{tag}</div>
             <figure className='cursor-pointer' onClick={()=> navigateId(id)}><img className='w-full h-64 object-cover' src={img} alt={name} /></figure>
             <div className="card-body">
@@ -18,9 +19,22 @@ const Properties = ({propertyData}) => {
                     <h1 className='font-bold text-2xl'>${price} <span className='font-normal text-xs text-slate-400'>/month</span></h1>
                 </div>
                 <p className='font-normal text-base text-slate-500'>{location.slice(0,120)}</p>
-                <div className="card-actions justify-end">
-                    <div className="badge badge-outline">Fashion</div>
-                    <div className="badge badge-outline">Products</div>
+                <hr className='my-3'></hr>
+                <div className="card-actions justify-between">
+                    <div className="bed flex items-center text-base">
+                        <span className='text-violet-500 text-lg'><MdOutlineBed></MdOutlineBed></span>
+                        <p className='ml-2 text-slate-500'>{bed} Beds</p>
+                    </div>
+
+                    <div className="bed flex items-center text-base">
+                        <span className='text-violet-500 text-lg'><MdOutlineBed></MdOutlineBed></span>
+                        <p className='ml-2 text-slate-500'>{bathroom} Bathroom</p>
+                    </div>
+
+                    <div className="bed flex items-center text-base">
+                        <span className='text-violet-500 text-lg'><MdOutlineBed></MdOutlineBed></span>
+                        <p className='ml-2 text-slate-500'>{space} m<sup>2</sup></p>
+                    </div>
                 </div>
             </div>
         </div>

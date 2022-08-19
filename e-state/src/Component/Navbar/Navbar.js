@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../Assets/e-state-logo.png'
 import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
@@ -27,7 +28,7 @@ const Navbar = () => {
                                 {menu}
                             </ul>
                         </div>
-                        <button onClick={handleNavigate}>E State</button>
+                        <button onClick={handleNavigate}><img className='w-44' src={logo} alt="logo" /></button>
                         {/* <Link className='lg:mr-8 p-3' to='/'>E State</Link> */}
                         <div className='hidden lg:block'>
                             <ul className="menu menu-horizontal p-0">
