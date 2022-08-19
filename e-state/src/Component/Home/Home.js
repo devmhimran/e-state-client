@@ -15,13 +15,13 @@ const Home = () => {
             <h2>notFoundMsg</h2>
         </div>
     </>
-    console.log(property.propertyType);
+
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/devmhimran/dummy-api/main/E-State-Api/data.json')
             .then(res => res.json())
             .then(data => setProperty(data))
     }, []);
-    console.log(location, price, date)
+
     return (
         <div className="home__main bg-violet-50 py-24">
             <div className="w-7/12 mx-auto">
@@ -53,16 +53,13 @@ const Home = () => {
                             property.filter((propertyData) => {
                                 return propertyData.location === '' ? propertyData
                                     : propertyData.location.toLowerCase().match(location.toLowerCase()) ? propertyData
-                                        : console.log('not found')
+                                        : ''
                             }).filter(data => {
                                 return price === '' ? data
                                     : data.price <= priceInt ? data
-                                        : console.log('data');
+                                        : '';
                             }).map(propertyData => <Properties key={propertyData.id} propertyData={propertyData}></Properties>)
                         }
-{/* .filter(data => {
-                                return data.propertyType ? data : console.log('not found')
-                            }) */}
                     </div>
 
                 </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MdOutlineBed } from 'react-icons/md';
+import { FaShower } from 'react-icons/fa';
+import { IoIosResize } from 'react-icons/io';
 
 const Properties = ({propertyData}) => {
     const {id, name, location, price, bed, bathroom, space, tag, img } = propertyData;
@@ -27,12 +29,12 @@ const Properties = ({propertyData}) => {
                     </div>
 
                     <div className="bed flex items-center text-base">
-                        <span className='text-violet-500 text-lg'><MdOutlineBed></MdOutlineBed></span>
+                        <span className='text-violet-500 text-lg'><FaShower></FaShower></span>
                         <p className='ml-2 text-slate-500'>{bathroom} Bathroom</p>
                     </div>
 
                     <div className="bed flex items-center text-base">
-                        <span className='text-violet-500 text-lg'><MdOutlineBed></MdOutlineBed></span>
+                        <span className='text-violet-500 text-lg'><IoIosResize></IoIosResize></span>
                         <p className='ml-2 text-slate-500'>{space} m<sup>2</sup></p>
                     </div>
                 </div>
