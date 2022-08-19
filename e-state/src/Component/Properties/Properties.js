@@ -18,7 +18,10 @@ const Properties = ({propertyData}) => {
             <figure className='cursor-pointer' onClick={()=> navigateId(id)}><img className='w-full h-64 object-cover' src={img} alt={name} /></figure>
             <div className="card-body">
                 <div className="price__main">
-                    <h1 className='font-bold text-2xl'>${price} <span className='font-normal text-xs text-slate-400'>/month</span></h1>
+                    <h2 className='font-bold text-2xl text-violet-500'>${price} <span className='font-normal text-xs text-slate-400'>/month</span></h2>
+                </div>
+                <div className="name__main">
+                    <h3 className='font-bold text-xl'>{name}</h3>
                 </div>
                 <p className='font-normal text-base text-slate-500'>{location.slice(0,120)}</p>
                 <hr className='my-3'></hr>
