@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Properties from '../Properties/Properties';
 import SearchBar from '../SearchBar/SearchBar';
-import toast, { Toaster } from 'react-hot-toast';
+import { RotatingLines, Oval } from 'react-loader-spinner'
 
 const Home = () => {
     const [property, setProperty] = useState([]);
@@ -9,17 +9,15 @@ const Home = () => {
     const [date, setDate] = useState('');
     const [price, setPrice] = useState('');
     const [propertyType, setPropertyType] = useState('');
+    const [loading, setLoading] = useState(false);
     const priceInt = parseInt(price);
-    const notFoundMessage = <>
-        <div>
-            <h2>notFoundMsg</h2>
-        </div>
-    </>
 
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/devmhimran/dummy-api/main/E-State-Api/data.json')
             .then(res => res.json())
             .then(data => setProperty(data))
+        setLoading(true);
+
     }, []);
 
     return (
@@ -59,6 +57,36 @@ const Home = () => {
                                     : data.price <= priceInt ? data
                                         : '';
                             }).map(propertyData => <Properties key={propertyData.id} propertyData={propertyData}></Properties>)
+
+                            //  <RotatingLines
+                            // strokeColor="grey"
+                            // strokeWidth="5"
+                            // animationDuration="0.75"
+                            // width="96"
+                            // visible={true}
+                            // /> 
+
+                            // property ? property.map(propertyData => <Properties key={propertyData.id} propertyData={propertyData}></Properties>) : <p>Loading</p>
+
+                        }
+                        {
+                            loading ? loading :
+                                <span className='animate-ping'>
+                                    <Oval
+                                        height={80}
+                                        width={80}
+                                        color="#4fa94d"
+                                        wrapperStyle={{}}
+                                        wrapperClass=""
+                                        visible={true}
+                                        ariaLabel='oval-loading'
+                                        secondaryColor="#4fa94d"
+                                        strokeWidth={2}
+                                        strokeWidthSecondary={2}
+
+                                    />
+                                </span>
+                            //  <h2 className='text-4xl'>Loading ...</h2>
                         }
                     </div>
 
